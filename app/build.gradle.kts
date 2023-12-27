@@ -38,6 +38,7 @@ android {
 dependencies {
 
     implementation(project(":presentation"))
+    implementation(project(":domain"))
 
     KTX.run {
         implementation(CORE)
