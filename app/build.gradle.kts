@@ -9,7 +9,7 @@ android {
     viewBinding.enable = true
 
     defaultConfig {
-        applicationId = "com.strone.koreme"
+        applicationId = AppConfig.nameSpace
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
