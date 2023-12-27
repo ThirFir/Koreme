@@ -1,20 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = AppConfig.appNameSpace
+    namespace = "com.strone.data"
     compileSdk = AppConfig.compileSdk
 
     defaultConfig {
-        applicationId = AppConfig.appNameSpace
         minSdk = AppConfig.minSdk
-        targetSdk = AppConfig.targetSdk
-        versionCode = AppConfig.versionCode
-        versionName = AppConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -37,9 +34,7 @@ android {
 
 dependencies {
 
-    implementation(project(":presentation"))
     implementation(project(":domain"))
-    implementation(project(":data"))
 
     KTX.run {
         implementation(CORE)
@@ -47,7 +42,6 @@ dependencies {
 
     AndroidX.run {
         implementation(APP_COMPAT)
-        implementation(CONSTRAINT_LAYOUT)
         implementation(MATERIAL)
     }
 
@@ -56,5 +50,4 @@ dependencies {
         androidTestImplementation(ANDROID_TEST)
         androidTestImplementation(ESPRESSO)
     }
-
 }
