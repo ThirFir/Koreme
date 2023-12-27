@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.strone.koreme"
+    namespace = AppConfig.nameSpace
     compileSdk = AppConfig.compileSdk
     viewBinding.enable = true
 
