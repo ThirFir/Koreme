@@ -4,12 +4,11 @@ plugins {
 }
 
 android {
-    namespace = AppConfig.nameSpace
+    namespace = AppConfig.appNameSpace
     compileSdk = AppConfig.compileSdk
-    viewBinding.enable = true
 
     defaultConfig {
-        applicationId = AppConfig.nameSpace
+        applicationId = AppConfig.appNameSpace
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
         versionCode = AppConfig.versionCode
@@ -37,6 +36,9 @@ android {
 }
 
 dependencies {
+
+    implementation(project(":presentation"))
+
     KTX.run {
         implementation(CORE)
     }

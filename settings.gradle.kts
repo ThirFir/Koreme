@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Koreme"
 include(":app")
- 
+include(":presentation")

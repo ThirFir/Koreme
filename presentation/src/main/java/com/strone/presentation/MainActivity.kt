@@ -1,4 +1,4 @@
-package com.strone.koreme
+package com.strone.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
