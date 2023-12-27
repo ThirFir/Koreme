@@ -5,15 +5,15 @@ plugins {
 
 android {
     namespace = "com.strone.koreme"
-    compileSdk = 34
+    compileSdk = AppConfig.compileSdk
     viewBinding.enable = true
 
     defaultConfig {
         applicationId = "com.strone.koreme"
-        minSdk = 26
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = AppConfig.minSdk
+        targetSdk = AppConfig.targetSdk
+        versionCode = AppConfig.versionCode
+        versionName = AppConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -37,12 +37,20 @@ android {
 }
 
 dependencies {
+    KTX.run {
+        implementation(CORE)
+    }
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    AndroidX.run {
+        implementation(APP_COMPAT)
+        implementation(CONSTRAINT_LAYOUT)
+        implementation(MATERIAL)
+    }
+
+    Test.run {
+        implementation(JUNIT)
+        androidTestImplementation(ANDROID_TEST)
+        androidTestImplementation(ESPRESSO)
+    }
+
 }
